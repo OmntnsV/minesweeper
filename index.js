@@ -215,6 +215,7 @@ class Game {
             for (let cell of row) {
                 if (!cell.opened && !cell.flagged) cellsLeft++;
                 if (cell.mine && !cell.flagged) cellsLeft++;
+                if (!cell.mine && cell.flagged) cellsLeft++;
                 const cellElement = document.createElement('div');
                 cellElement.classList.add('field_cell');
                 cellElement.id = `${cell.x}_${cell.y}`;
