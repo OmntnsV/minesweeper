@@ -156,7 +156,7 @@ class Game {
         
         event.stopPropagation();
         const targetDOM = event.target;
-        console.log(targetDOM);
+        // console.log(targetDOM);
         if (!targetDOM.classList.contains('field_cell') || targetDOM.classList.contains('opened') || event.currentTarget === targetDOM) return;
             const cellCoordinates = {
             'x': targetDOM.id.split('_')[0],
