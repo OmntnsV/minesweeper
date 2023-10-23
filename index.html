@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/mine.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <title>omntns-sweeper</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="popover" class="popover">
+      <span class="close-btn" onclick="toggleInfo()">&times;</span>
+      <p>Як проводити розмінування:</p>
+      <ul>
+        <li>Натисніть на клітину щоб показати її вміст.</li>
+        <li>Якщо клітина замінована, ви програли!</li>
+        <li>
+          Цифра всередині клітина вказує на кількість мін безспосередньо навколо
+          клітини.
+        </li>
+        <img src="/tutor.png" alt="demonstration" width="100" height="100" />
+        <li>
+          Щоб перемогти, всі заміновані клітини мають бути позначені прапором, а
+          не замінові - відкриті.
+        </li>
+      </ul>
+    </div>
+    <div class="divider">
+      <div id="settings_bar">
+        <div id="settings_welcome">
+          <h1>Вітаємо, сапере!</h1>
+          <p>Для початку гри тобі необхідно відповісти на пару запитань:</p>
+          <form>
+            <label for="name">Як тебе звати?</label>
+            <input
+              type="text"
+              id="welcome_input_name"
+              name="name"
+              placeholder="Іванів Іван Іванович"
+              pattern="^[A-Za-z\s\-']+$"
+              tabindex="1"
+            />
+            <p id="name_error" class="input_error">1234</p>
+            <label for="age">В якому році ти народився?</label>
+            <input
+              type="text"
+              id="welcome_input_age"
+              placeholder="2005"
+              tabindex="2"
+              maxlength="4"
+              name="age"
+            />
+            <p id="year_error" class="input_error">1234</p>
+            <button type="button" onclick="proceedFromWelcome()">
+              Продовжити
+            </button>
+          </form>
+        </div>
+        <div id="settings_start">
+          <form action="">
+            <h2>Налаштування</h2>
+            <label for="difficulty">Складність</label>
+            <select name="difficulty" id="settings_difficulty">
+              <option value="1">Легко</option>
+              <option value="2">Нормально</option>
+              <option value="3">Складно</option>
+            </select>
+            <label for="size">Розмір поля</label>
+            <input
+              type="number"
+              name="size"
+              id="settings_size"
+              min="8"
+              max="20"
+              value="8"
+            />
+            <button type="button" onclick="startGame()">Почати гру</button>
+          </form>
+        </div>
+        <button id="settings_info" onclick="toggleInfo()" type="button">
+          ?
+        </button>
+      </div>
+      <div id="main_screen">
+        <div id="game">
+          <div id="field"></div>
+        </div>
+      </div>
+    </div>
+    <script src="/index.js"></script>
+  </body>
+</html>

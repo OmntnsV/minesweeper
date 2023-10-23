@@ -1,0 +1,298 @@
+div, body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Play', sans-serif;
+}
+
+:root {
+    --form-color: #ddd9d1;
+    --form-hover-color: #c0bcb5;
+    --bg1-color: #eee;
+    --bg2-color: #ccc;
+}
+
+h2 {
+    cursor: default;
+}
+
+.divider {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--bg2-color);
+}
+
+#settings_bar {
+    width: 100vw;
+    height: 100vh;
+    min-width: 215px;
+    background-color: var(--bg1-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#settings_welcome {
+    text-align: center;
+    max-width: 270px;
+    padding: 30px;
+    background-color: var(--form-color);
+    border-radius: 5px;
+}
+
+#settings_welcome form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#settings_start {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#settings_start form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.popover {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    z-index: 1;
+  }
+
+  .close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+form input {
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #eee;
+    text-align: center;
+    width: 80%;
+    padding: 5px 0;
+}
+
+form button {
+    width: 50%;
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #eee;
+    cursor: pointer;
+}
+
+form select {
+    
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #eee;
+    text-align: center;
+    width: 80%;
+    padding: 5px 0;
+}
+
+.input_error {
+    color: red;
+    font-size: 12px;
+    margin-top: 0;
+    padding: 0;
+    display: none;
+}
+
+#settings_info {
+    font-size: 17px;
+    height: 50px;
+    width: 50px;
+    max-width: 200px;
+    border-radius: 30%;
+    background-color: white;
+    position: absolute;
+    /*Bottom right positioning*/
+    bottom: 25px;
+    left: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .1s ease-in-out;
+    opacity: 0;
+    margin-right: 25px;
+}
+
+#settings_info:hover {
+    scale: 1.1;
+}
+
+.settings_bar-shortening_animation {
+    animation: settings_bar-shortening 0.5s ease-in-out forwards;
+}
+
+.settings_welcome-fadeout_animation {
+    animation: settings_welcome-fadeout 0.5s ease-in-out forwards;
+}
+
+@keyframes settings_bar-shortening {
+    0% {
+        width: 100vw;
+    }
+    100% {
+        width: 20vw;
+    }
+}
+
+@keyframes settings_welcome-fadeout {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+#main_screen {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* grid */
+#field {
+    max-width: 80%;
+    display: grid;
+    gap: 2px;
+}
+
+#flagButton {
+    font-size: 17px;
+    height: 50px;
+    width: 50px;
+    border-radius: 30%;
+    background-color: white;
+    position: absolute;
+    /*Bottom right positioning*/
+    bottom: 25px;
+    right: 25px;
+    transition: scale .1s ease-in-out;
+}
+
+#flagButton:hover {
+    scale: 1.1;
+}
+
+.flagButton-active {
+    background-color: red;
+}
+
+#game {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.field_cell {
+    width: 30px;
+    height: 30px;
+    background-color: var(--form-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .1s ease-in-out;
+    box-shadow: #000 1px 1px 2px;
+    user-select: none;
+}
+
+.field_cell:hover {
+    background-color: var(--form-hover-color);
+}
+
+#field {
+    transition: scale .1s ease-in-out;
+    background-color: var(--bg1-color);
+    border-radius: 25px;
+}
+
+#field:hover {
+    scale: 1.1;
+}
+
+.opened {
+    background-color: var(--bg2-color);
+    box-shadow: none;
+    cursor: default;
+}
+
+.mine {
+    background-color: red;
+}
+
+
+/* COLORS */
+
+.number-0 {
+    color: #0000ff; /* Blue */
+  }
+  
+  .number-1 {
+    color: #1976d2; /* Dark Blue */
+  }
+  
+  .number-2 {
+    color: #2196f3; /* Blue */
+  }
+  
+  .number-3 {
+    color: #64b5f6; /* Light Blue */
+  }
+  
+  .number-4 {
+    color: #90caf9; /* Very Light Blue */
+  }
+  
+  .number-5 {
+    color: #bbdefb; /* Pale Blue */
+  }
+  
+  .number-6 {
+    color: #e3f2fd; /* Extremely Pale Blue */
+  }
+  
+  .number-7 {
+    color: #f5f5f5; /* Almost White */
+  }
+  
+  .number-8 {
+    color: #fafafa; /* Very Light Gray */
+  }
