@@ -7,7 +7,7 @@ function proceedFromWelcome() {
         closeForm();}
 
     function nameValidation() {
-        const nameRegex = /^[A-Za-zА-Яа-яЁёҐґЄєІіЇїЎўІіЇїЎўҐґ ]+$/;
+        const nameRegex = /^[A-Za-zА-Яа-яЁёҐґЄєІіЇїЎўІіЇїЎўҐґ‘ ]+$/;
         const name = document.getElementById('welcome_input_name');
         const nameInitialValue = name.value;
 
