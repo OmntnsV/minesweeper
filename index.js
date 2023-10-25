@@ -149,11 +149,12 @@ class Game {
         this.flagMode = false;
         this.field = Game.fieldGenereator(this.fieldSize, this.difficulty);
         this.divField = document.getElementById('field');
+        this.disableControls = false;
 
     }
 
     onClick = (event) => {
-        
+        if (this.disableControls) return;
         event.stopPropagation();
         const targetDOM = event.target;
         // console.log(targetDOM);
@@ -187,6 +188,7 @@ class Game {
     }
 
     onDeath() {
+        this.disableControls = true;
         this.divField.innerHTML = '';
         this.field.forEach(row => {
             row.forEach(cell => {
