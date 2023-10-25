@@ -15,6 +15,14 @@ h2 {
     cursor: default;
 }
 
+h3 {
+    margin-left: 30px;
+}
+
+li {
+    margin: 10px;
+}
+
 .divider {
     width: 100vw;
     height: 100vh;
