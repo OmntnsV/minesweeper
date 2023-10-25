@@ -7,7 +7,7 @@ function proceedFromWelcome() {
         closeForm();}
 
     function nameValidation() {
-        const nameRegex = /^[A-Za-zА-Яа-яЁёҐґЄєІіЇїЎўІіЇїЎўҐґ‘ ]+$/;
+        const nameRegex = /^[A-Za-zА-Яа-яЁёҐґЄєІіЇїЎўІіЇїЎўҐґ 'ʼ]+$/;
         const name = document.getElementById('welcome_input_name');
         const nameInitialValue = name.value;
 
@@ -38,7 +38,7 @@ function proceedFromWelcome() {
         const year = document.getElementById("welcome_input_age");
         const yearInitialValue = year.value;
         const currentYear = new Date().getFullYear();
-        const age = currentYear - year;
+        const age = currentYear - Number(yearInitialValue);
 
         if (isNaN(yearInitialValue)) {
             //test for NaN
@@ -52,7 +52,7 @@ function proceedFromWelcome() {
            displayInputError(false, 'Невірна кількість символів');
            return false;
        }
-       if (Number(yearInitialValue) > currentYear || age > 65) {
+       if (Number(yearInitialValue) > currentYear || age > 65 || age < 18) {
            //test for year range
            console.log(currentYear);
            console.log('invalid year');
