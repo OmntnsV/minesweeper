@@ -262,37 +262,38 @@ form select {
 /* COLORS */
 
 .number-0 {
-    color: #0000ff; /* Blue */
+    color: #006400; /* Dark Green */
   }
   
   .number-1 {
-    color: #1976d2; /* Dark Blue */
+    color: #0d6104;
   }
   
   .number-2 {
-    color: #2196f3; /* Blue */
+    color: #1b7206;
   }
   
   .number-3 {
-    color: #64b5f6; /* Light Blue */
+    color: #2b8308;
   }
   
   .number-4 {
-    color: #90caf9; /* Very Light Blue */
+    color: #3d940b;
   }
   
   .number-5 {
-    color: #bbdefb; /* Pale Blue */
+    color: #4fa50d;
   }
   
   .number-6 {
-    color: #e3f2fd; /* Extremely Pale Blue */
+    color: #61b60f;
   }
   
   .number-7 {
-    color: #f5f5f5; /* Almost White */
+    color: #73c710;
   }
   
   .number-8 {
-    color: #fafafa; /* Very Light Gray */
+    color: #85d811; /* Red */
   }
+  
