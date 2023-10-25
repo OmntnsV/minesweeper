@@ -106,7 +106,7 @@ let game;
 
 function startGame() {
     if (document.getElementById('flagButton')) document.getElementById('flagButton').remove();
-    const fieldSize = document.getElementById('settings_size').value;
+    const fieldSize = document.getElementById('settings_size').value < 8 ? 8 : document.getElementById('settings_size').value > 20 ? 20 : document.getElementById('settings_size').value;
     const difficulty = document.getElementById('settings_difficulty').value;
 
     game = new Game(fieldSize, difficulty);
